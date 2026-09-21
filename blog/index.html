@@ -1,0 +1,76 @@
+---
+layout: null
+title: Blog
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog — Justin Gist Preuninger</title>
+<meta name="description" content="Notes on observability, automation, and threat intelligence from Justin Gist Preuninger.">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+<link rel="icon" type="image/png" href="{{ '/assets/brand/icon-32.png' | relative_url }}" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/assets/brand/icon-180.png' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="{{ '/index.html' | relative_url }}">
+      <img src="{{ '/assets/brand/logo-full.png' | relative_url }}" alt="Preuninger logo">
+      <span>Justin Gist Preuninger</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">menu</button>
+    <ul class="nav-links">
+      <li><a href="{{ '/index.html' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
+      <li><a href="{{ '/blog/index.html' | relative_url }}" aria-current="page">Blog</a></li>
+      <li><a href="{{ '/index.html' | relative_url }}#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="statusline">
+  <span><span class="dot" aria-hidden="true"></span>{{ site.posts.size }} post{% if site.posts.size != 1 %}s{% endif %} published</span>
+</div>
+
+<main>
+  <section class="wrap">
+    <div class="section-head">
+      <h2>Blog</h2>
+      <span class="tag">observability · automation · threat intel</span>
+    </div>
+    <p class="prose" style="max-width:68ch; color:var(--navy-soft);">
+      Field notes from pre-sales and infrastructure work — mostly technical, occasionally opinionated.
+      For personal writing, see the archive at
+      <a href="https://www.lifelibertyelegance.com" style="color:var(--maroon);">lifelibertyelegance.com</a>.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <div class="post-list">
+      {% for post in site.posts %}
+      <div class="post-row">
+        <div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>
+        <div>
+          <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-excerpt">{{ post.excerpt | default: post.content | strip_html | truncatewords: 28 }}</p>
+        </div>
+      </div>
+      {% else %}
+      <p class="prose" style="color:var(--navy-faint);">No posts yet — add a markdown file to <code>_posts/</code> to get started.</p>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span class="foot-brand"><img src="{{ '/assets/brand/logo-full.png' | relative_url }}" alt="">© {{ site.time | date: '%Y' }} Justin Gist Preuninger</span>
+  <span><a href="{{ '/index.html' | relative_url }}">Home</a></span>
+</footer>
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} — Justin Gist Preuninger</title>
+<meta name="description" content="{{ page.excerpt | default: site.description }}">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+<link rel="icon" type="image/png" href="{{ '/assets/brand/icon-32.png' | relative_url }}" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/assets/brand/icon-180.png' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="{{ '/index.html' | relative_url }}">
+      <img src="{{ '/assets/brand/logo-full.png' | relative_url }}" alt="Preuninger logo">
+      <span>Justin Gist Preuninger</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">menu</button>
+    <ul class="nav-links">
+      <li><a href="{{ '/index.html' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
+      <li><a href="{{ '/blog/index.html' | relative_url }}" aria-current="page">Blog</a></li>
+      <li><a href="{{ '/index.html' | relative_url }}#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="wrap article-head">
+    <div class="tl-when">{{ page.date | date: "%Y-%m-%d" }}{% if page.read_time %} · {{ page.read_time }}{% endif %}</div>
+    <h1>{{ page.title }}</h1>
+    {% if page.excerpt %}<p class="article-lede">{{ page.excerpt }}</p>{% endif %}
+  </section>
+
+  <section class="wrap">
+    <div class="article-body">
+      {{ content }}
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span class="foot-brand"><img src="{{ '/assets/brand/logo-full.png' | relative_url }}" alt="">© {{ site.time | date: '%Y' }} Justin Gist Preuninger</span>
+  <span><a href="{{ '/blog/index.html' | relative_url }}">Back to blog</a></span>
+</footer>
+
+<script src="{{ '/js/main.js' | relative_url }}"></script>
+</body>
+</html>

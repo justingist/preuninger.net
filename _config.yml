@@ -1,0 +1,20 @@
+title: Justin Gist Preuninger
+description: >-
+  Solutions engineer working across observability, automation, and cyber
+  threat intelligence. Notes on pre-sales, infrastructure, and technology.
+
+# Every post lives under /blog/<title>/ regardless of its _posts filename date.
+permalink: /blog/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Files/folders that exist for the repo but shouldn't be published as pages.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - assets/brand/logo-source.pdf
+  - node_modules
