@@ -1,14 +1,14 @@
 ---
 layout: null
-title: Blog
+title: Gallery
 ---
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog — Justin Gist Preuninger</title>
-<meta name="description" content="Notes on observability, automation, and threat intelligence from Justin Gist Preuninger.">
+<title>Gallery — Justin Gist Preuninger</title>
+<meta name="description" content="Photo gallery — Justin Gist Preuninger.">
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
 <link rel="icon" type="image/png" href="{{ '/assets/brand/icon-32.png' | relative_url }}" sizes="32x32">
 <link rel="apple-touch-icon" href="{{ '/assets/brand/icon-180.png' | relative_url }}">
@@ -26,46 +26,49 @@ title: Blog
     <ul class="nav-links">
       <li><a href="{{ '/index.html' | relative_url }}">Home</a></li>
       <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
-      <li><a href="{{ '/blog/index.html' | relative_url }}" aria-current="page">Blog</a></li>
-      <li><a href="{{ '/gallery/index.html' | relative_url }}">Gallery</a></li>
+      <li><a href="{{ '/blog/index.html' | relative_url }}">Blog</a></li>
+      <li><a href="{{ '/gallery/index.html' | relative_url }}" aria-current="page">Gallery</a></li>
       <li><a href="{{ '/index.html' | relative_url }}#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <div class="statusline">
-  <span><span class="dot" aria-hidden="true"></span>{{ site.posts.size }} post{% if site.posts.size != 1 %}s{% endif %} published</span>
+  <span><span class="dot" aria-hidden="true"></span>{{ site.data.gallery.size }} photo{% if site.data.gallery.size != 1 %}s{% endif %}</span>
 </div>
 
 <main>
   <section class="wrap">
     <div class="section-head">
-      <h2>Blog</h2>
-      <span class="tag">observability · automation · threat intel</span>
+      <h2>Gallery</h2>
+      <span class="tag">photos</span>
     </div>
     <p class="prose" style="max-width:68ch; color:var(--navy-soft);">
-      Field notes from pre-sales and infrastructure work — mostly technical, occasionally opinionated.
-      For personal writing, see the archive at
-      <a href="https://www.lifelibertyelegance.com" style="color:var(--maroon);">lifelibertyelegance.com</a>.
+      A running set of photos — home lab builds, events, and whatever else doesn't fit neatly
+      into a blog post.
     </p>
   </section>
 
-  <section class="wrap">
-    <div class="post-list">
-      {% for post in site.posts %}
-      <div class="post-row">
-        <div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>
-        <div>
-          <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p class="post-excerpt">{{ post.excerpt | default: post.content | strip_html | truncatewords: 28 }}</p>
-        </div>
-      </div>
+  <section class="wrap-wide">
+    <div class="gallery-grid">
+      {% for photo in site.data.gallery %}
+      <button type="button" class="gallery-item" data-full="{{ photo.src | relative_url }}" data-caption="{{ photo.caption | escape }}">
+        <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt | escape }}" loading="lazy">
+      </button>
       {% else %}
-      <p class="prose" style="color:var(--navy-faint);">No posts yet — add a markdown file to <code>_posts/</code> to get started.</p>
+      <p class="prose" style="color:var(--navy-faint);">No photos yet — add entries to <code>_data/gallery.yml</code> to get started.</p>
       {% endfor %}
     </div>
   </section>
 </main>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+  <button type="button" class="lightbox-prev" aria-label="Previous photo">&lsaquo;</button>
+  <img class="lightbox-img" src="" alt="">
+  <button type="button" class="lightbox-next" aria-label="Next photo">&rsaquo;</button>
+  <p class="lightbox-caption"></p>
+</div>
 
 <footer class="site-footer">
   <span class="foot-brand"><img src="{{ '/assets/brand/logo-full.png' | relative_url }}" alt="">© {{ site.time | date: '%Y' }} Justin Gist Preuninger</span>
@@ -73,5 +76,6 @@ title: Blog
 </footer>
 
 <script src="{{ '/js/main.js' | relative_url }}"></script>
+<script src="{{ '/js/gallery.js' | relative_url }}"></script>
 </body>
 </html>

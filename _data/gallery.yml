@@ -1,0 +1,48 @@
+# Photo gallery — one entry per photo, shown in this order.
+# `src` is the path to the image under assets/ (site-root-relative).
+# These are placeholders (existing screenshots) — swap `src` for real
+# photos under assets/gallery/ and update alt/caption as you go.
+
+- src: /assets/gallery/IMG_8295.png
+  alt: BSides Porto 2026
+  caption: "BSides Porto 2026"
+
+- src: /assets/gallery/IMG_7828.PNG
+  alt: Ready for IT, Monaco, 2026
+  caption: "Ready for IT, Monaco, 2026"
+
+- src: /assets/gallery/IMG_7803.JPG
+  alt: Softprom Cyber Security Partner Event, Warsaw, 2026
+  caption: "Softprom Cyber Security Partner Event, Warsaw, 2026"
+
+- src: /assets/gallery/IMG_4680.PNG
+  alt: Forum International de la Cybersécurité, Lille, 2026
+  caption: "Forum International de la Cybersécurité, Lille, 2026"
+
+- src: /assets/gallery/IMG_3407.JPG
+  alt: Sekoia Global Partner Event, Paris, 2026
+  caption: "Sekoia Global Partner Event, Paris, 2026"
+
+- src: /assets/gallery/IMG_6940.png
+  alt: Las Vegas, 2025
+  caption: "Las Vegas, 2025"
+
+- src: /assets/gallery/IMG_6849.JPG
+  alt: Dynatrace SKO, Las Vegas, 2025
+  caption: "Dynatrace SKO, Las Vegas, 2025"
+
+- src: /assets/gallery/IMG_3396.png
+  alt: Versailles Masked Ball, 2024
+  caption: "Versailles Masked Ball, 2024"
+
+- src: /assets/gallery/paris2024olympics.jpg
+  alt: Paris Olympics, 2024
+  caption: "Paris Olympics, 2024"
+
+- src: /assets/gallery/45017554-6a6e-41d8-8135-ebad0e9b1622.JPG
+  alt: Brooklyn Bridge, New York, 2024
+  caption: "Brooklyn Bridge, New York, 2024"
+
+- src: /assets/gallery/IMG_5609 2.png
+  alt: Versailles Masked Ball, 2023
+  caption: "Versailles Masked Ball, 2023"
