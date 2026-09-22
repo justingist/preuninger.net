@@ -8,7 +8,7 @@ read_time: N min read
 
 *n.b.: This is how I began monitoring my energy costs using Dynatrace in the spring of 2025. I'll explain in a future post how this workflow became much cleaner by deploying custom workflow actions!*
 
-If you're interested in joining the same tariff I used in this example, consider using my referral code: [dusk-shark-528](https://share.octopus.energy/dusk-shark-528)
+If you're interested in joining the same tariff I used in this example, consider using my Octopus referral code: [dusk-shark-528](https://share.octopus.energy/dusk-shark-528)
 
 Here's how the project came together, goal by goal...
 
@@ -48,8 +48,7 @@ A scheduled task running a PowerShell script that hit the SmartThings API direct
 Leveraging Dynatrace Workflows to poll the SmartThings API on a schedule, ingesting the results as BizEvents — eventually parsing everything through **OpenPipeline with metric extraction** instead.
 
 ![Dynatrace Workflow polling the SmartThings API on a schedule and ingesting BizEvents](../../assets/dynatrace-workflow-smartthings.png)
-
-Note the use of the credentials vault to avoid credentials in raw text!
+*Note the use of the credentials vault to avoid credentials in raw text!*
 
 The shift to Workflows + OpenPipeline was a meaningful upgrade: less custom scripting to maintain, and a cleaner path from raw event to usable metric. Additionally, metrics were more cost-effective than bizevents. BizEvents remained more useful for process-related items, such as when I flagged a Smart Charge session.
 
