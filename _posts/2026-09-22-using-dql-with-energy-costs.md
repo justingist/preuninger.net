@@ -5,13 +5,12 @@ excerpt: "What started as curiosity about my energy bills turned into a full-blo
 read_time: N min read
 ---
 
-n.b.: This is how I began monitoring my energy costs using Dynatrace in the spring of 2025. I'll explain in a future post how this workflow became much cleaner by deploying custom workflow actions!
 
-What started as curiosity about my energy bills turned into a full-blown observability project — using the same tools I worked with professionally (Dynatrace, DQL, custom ingest pipelines) to answer a very personal question: **where is my energy actually going, and how much is it costing me?**
+*n.b.: This is how I began monitoring my energy costs using Dynatrace in the spring of 2025. I'll explain in a future post how this workflow became much cleaner by deploying custom workflow actions!*
 
 If you're interested in joining the same tariff I used in this example, consider using my referral code: [dusk-shark-528](https://share.octopus.energy/dusk-shark-528)
 
-Here's how the project came together, goal by goal.
+Here's how the project came together, goal by goal...
 
 ## The Big Picture: Four Goals
 
