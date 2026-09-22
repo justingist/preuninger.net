@@ -43,18 +43,18 @@ SmartThings was my first challenge at the ingest layer. I actually went through 
 **Method 1: Scheduled PowerShell + API**
 A scheduled task running a PowerShell script that hit the SmartThings API directly and ingested the results as classic Dynatrace metrics using the metric ingest protocol.
 
-![Powershell script and scheduled task](assets/powershellingest.png)
+![Powershell script and scheduled task](../../assets/powershellingest.png)
 
 **Method 2: Dynatrace Workflows**
 Leveraging Dynatrace Workflows to poll the SmartThings API on a schedule, ingesting the results as BizEvents — eventually parsing everything through **OpenPipeline with metric extraction** instead.
 
-![Dynatrace Workflow polling the SmartThings API on a schedule and ingesting BizEvents](assets/dynatrace-workflow-smartthings.png)
+![Dynatrace Workflow polling the SmartThings API on a schedule and ingesting BizEvents](../../assets/dynatrace-workflow-smartthings.png)
 
 Note the use of the credentials vault to avoid credentials in raw text!
 
 The shift to Workflows + OpenPipeline was a meaningful upgrade: less custom scripting to maintain, and a cleaner path from raw event to usable metric. Additionally, metrics were more cost-effective than bizevents. BizEvents remained more useful for process-related items, such as when I flagged a Smart Charge session.
 
-![Dynatrace OpenPipeline processing a SmartThings lighting power estimation with a DQL processor](assets/openpipeline-metric-extraction.png)
+![Dynatrace OpenPipeline processing a SmartThings lighting power estimation with a DQL processor](../../assets/openpipeline-metric-extraction.png)
 
 
 
@@ -71,7 +71,7 @@ This turned into an ongoing exercise in improvements in query writing:
 
 Every query taught me something new about both the data and DQL itself — this stage was as much about *DQL enablement on real data* as it was about the house. I find that I often learn best when I have a purpose, both because it is motivating, but also because you can sanity-check the results and confirm your understanding.
 
-![A DQL query splitting energy usage into off-peak, peak, and smart-charge windows, with the resulting bar chart](assets/dql-query-and-chart.png)
+![A DQL query splitting energy usage into off-peak, peak, and smart-charge windows, with the resulting bar chart](../../assets/dql-query-and-chart.png)
 In this query, I used a combination of the time of day for peak/off peak energy rates as well as bizevents stored from querying Octopus Energy to flag times of the day when a Smart Charge had occurred. (Octopus Intelligent Go is a tariff that allows an EV charger to identify moments of the day when the grid is best suited for charging, which then unlocks cheaper energy.)
 
 ## Goal 3: Visualizing — Long-Term and Immediately Actionable
@@ -85,7 +85,7 @@ I split visualizations into two categories:
 - **Immediately actionable** — what's happening right now that I can respond to today
 - **Long term** — trends worth tracking over weeks and months
 
-![Home Automation Data dashboard showing energy by tariff rate, gas usage, power consumption by device, temperature, and humidity](assets/home-automation-dashboard.png)
+![Home Automation Data dashboard showing energy by tariff rate, gas usage, power consumption by device, temperature, and humidity](../../assets/home-automation-dashboard.png)
 
 ## Goal 4: Budget Outcomes — Making It Tangible
 
@@ -99,7 +99,7 @@ Using calculated energy use for heat pumps versus gas, and collected variable ta
 - This justified investing further in heat pumps and battery storage
 - The result: a **£40 reduction in gas costs** and **£15 off the total bill** between December 2024 and January 2025
 
-![Gas vs Electric](assets/heating_comparison.png)
+![Gas vs Electric](../../assets/heating_comparison.png)
 
 
 I also built automatic bill calculation into the pipeline, meaning:
@@ -107,7 +107,7 @@ I also built automatic bill calculation into the pipeline, meaning:
 - No need to wait for the actual bill to know if I'm on track for savings (Octopus Energy only introduced this feature into their own app in Summer 2026)
 - Ability to iterate *within each day* to make the most of the best rates
 
-![Tariff rates overall pie chart and power consumption by category breakdown, alongside bill estimate, unit average, and total gas/electricity](assets/tariff-and-consumption-breakdown.png)
+![Tariff rates overall pie chart and power consumption by category breakdown, alongside bill estimate, unit average, and total gas/electricity](../../assets/tariff-and-consumption-breakdown.png)
 
 ## Goal 5: Summary and Results
 
