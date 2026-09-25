@@ -3,6 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  (function(h,o,u,n,d) {
+    h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+    d=o.createElement(u);d.async=1;d.src=n,d.crossOrigin=''
+    n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+  })(window,document,'script','https://www.datadoghq-browser-agent.com/uk1/v7/datadog-rum.js','DD_RUM')
+  window.DD_RUM.onReady(function() {
+    window.DD_RUM.init({
+      applicationId: 'f57b818c-e8fa-44ee-8679-4f79a2e2e4bb',
+      clientToken: 'pubd75b22eefd467d147468e895fcba69d0',
+      site: 'uk1.datadoghq.com',
+      service: 'preuninger-net',
+      env: 'production',
+      sessionSampleRate: 100,
+      sessionReplaySampleRate: 0,
+      trackUserInteractions: true,
+      trackResources: true,
+      trackLongTasks: true,
+      defaultPrivacyLevel: 'mask-user-input',
+    });
+  })
+</script>
 <title>{{ page.title }} — Justin Gist Preuninger</title>
 <meta name="description" content="{{ page.excerpt | default: site.description }}">
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
