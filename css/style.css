@@ -131,6 +131,33 @@ img{ max-width: 100%; display:block; }
   .nav-links a:hover, .nav-links a[aria-current="page"]{ background: var(--surface-2); }
 }
 
+/* ---------- certification badge strip ---------- */
+
+.cert-badges{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 22px;
+  padding: 14px var(--pad);
+  border-bottom: 1px solid var(--line);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.cert-badges .cert-badges-label{
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--navy-faint);
+  flex-shrink: 0;
+}
+.cert-badges img{
+  height: 40px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 640px){
+  .cert-badges img{ height: 32px; }
+}
+
 /* ---------- status line (a log line — literal to the subject) ---------- */
 
 .statusline{
